@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit File Page</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="w-full max-w-7xl mx-auto px-4 py-8">
+
+        <div class="flex justify-between items-center border-b border-zinc-600 pb-5 flex-wrap">
+
+            <a href="/task/read/<%= encodeURIComponent(fileName) %>" class="text-blue-600 text-lg hover:underline">Back</a>
+
+            <h1 class="text-3xl font-semibold text-center w-full sm:w-auto">Edit File</h1>
+
+            <h1 class="text-2xl font-semibold break-words w-full sm:w-auto text-center">
+                <%= fileName %>
+            </h1>
+
+        </div>
+
+        <form action="/task/update/<%= encodeURIComponent(fileName) %>" method="POST" class="w-full py-8 flex flex-col gap-5">
+            <textarea name="fileDetail" rows="10" placeholder="Details..."
+                class="w-full bg-zinc-800 outline-none px-3 py-3 border border-zinc-600 resize-none focus:ring-1 focus:ring-blue-600"><%= fileDetail %></textarea>
+            
+            <input type="submit" value="Update File" 
+                class="bg-blue-800 hover:bg-blue-700 text-white p-3 cursor-pointer transition">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read File Page</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="w-full max-w-7xl mx-auto px-4 py-8">
+
+        <div class="flex justify-between items-center gap-5 flex-wrap border-b border-zinc-600 pb-5">
+
+            <a href="/" class="text-blue-600 text-lg hover:underline">Home</a>
+            <h1 class="text-3xl font-semibold text-center w-full sm:w-auto break-words">
+                <%= fileName %>
+            </h1>
+            <div class="flex gap-8">
+                <a href="/task/edit/<%= encodeURIComponent(fileName) %>" 
+                   class="text-green-600 text-lg hover:underline">Edit</a>
+                <a href="/task/delete/<%= encodeURIComponent(fileName) %>" 
+                   class="text-red-600 text-lg hover:underline">Delete</a>
+            </div>
+
+        </div>
+
+        <div class="w-full py-8">
+            <div class="w-full bg-zinc-800 border border-zinc-600 p-6 text-lg">
+                <%= fileDetail %>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

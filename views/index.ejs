@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+
+    <div class="w-full max-w-7xl mx-auto px-4">
+        <h1 class="text-4xl py-8 font-semibold text-center">Notes App</h1>
+
+        <form action="/task/create" method="post" class="w-full p-5 flex flex-col gap-5">
+            <input type="text" name="fileTitle" placeholder="Title of Task"
+                class="w-full bg-zinc-800 outline-none px-3 py-3 border border-zinc-600 focus:ring-1 focus:ring-blue-600">
+
+            <textarea name="fileDetail" placeholder="Details..."
+                class="w-full bg-zinc-800 outline-none px-3 py-3 border border-zinc-600 resize-none focus:ring-1 focus:ring-blue-600"></textarea>
+
+            <input type="submit" value="Create Task"
+                class="bg-blue-800 hover:bg-blue-700 text-white p-3 cursor-pointer transition">
+        </form>
+    </div>
+
+    <div class="w-full max-w-7xl mx-auto px-4">
+        <h1 class="text-2xl md:text-4xl py-5 font-semibold text-center">==== Notes ====</h1>
+
+        <div class="w-full p-5 flex flex-wrap gap-6 justify-start">
+            <% if (files.length > 0) { %>
+                <% files.forEach((file) => { %>
+                    <div class="w-full sm:w-[48%] lg:w-[30%] bg-zinc-800 p-4 px-5">
+                        <div class="text-xl mb-5 break-words"><%= file %></div>
+                        <a href="/task/read/<%= file %>"
+                            class="text-small py-1 text-blue-700 cursor-pointer inline-block">
+                            Read more...
+                        </a>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <div class="bg-zinc-800 w-full p-4 text-center">
+                    <span class="text-zinc-400 text-xl">No Notes Found...</span>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html> 
