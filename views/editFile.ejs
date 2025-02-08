@@ -13,13 +13,14 @@
 
     <div class="w-full max-w-7xl mx-auto px-4 py-8">
 
-        <div class="flex justify-between items-center border-b border-zinc-600 pb-5 flex-wrap">
+        <div class="flex justify-between items-center border-b border-zinc-600 pb-5">
 
-            <a href="/task/read/<%= encodeURIComponent(fileName) %>" class="text-blue-600 text-lg hover:underline">Back</a>
+            <a href="/task/read/<%= encodeURIComponent(fileName) %>" 
+            class="text-blue-600 text-lg hover:underline">Back</a>
 
-            <h1 class="text-3xl font-semibold text-center w-full sm:w-auto">Edit File</h1>
+            <h1 class="text-2xl md:text-3xl font-semibold text-center w-full">Edit File</h1>
 
-            <h1 class="text-2xl font-semibold break-words w-full sm:w-auto text-center">
+            <h1 class="text-small md:text-2xl font-semibold text-center">
                 <%= fileName %>
             </h1>
 
