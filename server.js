@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
+// Main Route
 app.get("/", (req, res) => {
     fs.readdir('./Files', (err, files) => {
         if (err) {
@@ -29,9 +29,8 @@ app.get("/", (req, res) => {
 // Task Route
 app.use('/task',taskRouter);
 
+
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`);
 });
 
-
-// Route and Controller  08/02/2025
